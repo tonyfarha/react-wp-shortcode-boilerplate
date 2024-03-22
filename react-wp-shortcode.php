@@ -6,15 +6,32 @@
  * Author URI: https://github.com/tonyfarha
  */
 
-function dbt_react_wp_shortcode_app_enqueue_scripts() {
-    wp_enqueue_script('dbt-react-wp-shortcode-app', plugins_url('/build/index.js', __FILE__), array('wp-element'), time(), true);
-    wp_enqueue_style('dbt-react-wp-shortcode-app-style', plugins_url('/build/style-index.css', __FILE__), array(), time());
-}
+function dbt_render_react_wp_shortcode_app($atts) {
 
-add_action('wp_enqueue_scripts', 'dbt_react_wp_shortcode_app_enqueue_scripts');
+	$idPrefix = "dbt-react-wp-shortcode-app";
+	$randomNum = rand(0, 100);
 
-function dbt_render_react_wp_shortcode_app() {
-    return '<div id="dbt-react-wp-shortcode-app"></div>';
+	$atts = shortcode_atts(
+		[
+			'id' => $randomNum, // Default ID if none is provided
+		],
+		$atts,
+		'react_wp_shortcode_app'
+	);
+
+	$escapedID = esc_attr($atts['id']);
+	$containerID = $idPrefix . '-' . $escapedID;
+
+	wp_enqueue_script("dbt-react-wp-shortcode-app-$escapedID", plugins_url('/build/index.js', __FILE__), array('wp-element'), time(), true);
+	wp_enqueue_style('dbt-react-wp-shortcode-app-style', plugins_url('/build/style-index.css', __FILE__), array(), time());
+
+	$data_to_pass_to_js = [
+		'containerID' => $containerID,
+	];
+
+	wp_localize_script("dbt-react-wp-shortcode-app-$escapedID", 'pluginData', $data_to_pass_to_js);
+
+	return '<div id="' . $containerID . '"></div>';
 }
 
 add_shortcode('react_wp_shortcode_app', 'dbt_render_react_wp_shortcode_app');
