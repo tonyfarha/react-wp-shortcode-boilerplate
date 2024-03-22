@@ -6,7 +6,11 @@ React WP Shortcode is a WordPress plugin that allows you to easily render a Reac
 
 1. **Download the Plugin**: Download the ZIP file of this plugin and extract it to your WordPress plugin directory (`wp-content/plugins/react-wp-shortcode`).
 
-2. **Activate the Plugin**: Navigate to the "Plugins" menu in your WordPress admin area. Find "React WP Shortcode" in the list and click "Activate".
+2. **Install Dependencies**: Navigate to the plugin's root directory in a terminal and run `npm install` to install the required dependencies.
+
+3. **Build for Production**: Run `npm run build` to compile and optimize your React app for production use.
+
+4. **Activate the Plugin**: Navigate to the "Plugins" menu in your WordPress admin area. Find "React WP Shortcode" in the list and click "Activate".
 
 ## Usage
 
