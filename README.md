@@ -4,6 +4,10 @@ React WP Shortcode is a WordPress plugin that allows you to easily render a Reac
 
 ## Installation
 
+### Prerequisites
+
+Ensure you have `Node.js` and `npm` installed on your machine.
+
 1. **Download the Plugin**: Download the ZIP file of this plugin and extract it to your WordPress plugin directory (`wp-content/plugins/react-wp-shortcode`).
 
 2. **Install Dependencies**: Navigate to the plugin's root directory in a terminal and run `npm install` to install the required dependencies.
