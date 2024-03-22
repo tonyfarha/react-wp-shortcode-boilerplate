@@ -12,9 +12,9 @@ React WP Shortcode is a WordPress plugin that allows you to easily render a Reac
 
 To use the plugin, simply add the following shortcode to the content of any post or page where you want your React app to appear:
 
-\```shortcode
+```shortcode
 [react_wp_shortcode_app]
-\```
+```
 
 ## Development
 
