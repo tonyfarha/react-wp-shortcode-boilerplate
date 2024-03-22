@@ -1,6 +1,6 @@
-# React WP Shortcode
+# React WP Shortcode Boilerplate
 
-React WP Shortcode is a WordPress plugin that allows you to easily render a React app on any post or page using a simple shortcode. It leverages `@wordpress/scripts` for an efficient development and build process.
+React WP Shortcode Boilerplate is a foundational WordPress plugin designed to jumpstart your project. It enables easy integration and rendering of a React application within any post or page through a straightforward shortcode. Built on @wordpress/scripts, it offers a streamlined development and build workflow perfect for custom projects.
 
 ## Installation
 
